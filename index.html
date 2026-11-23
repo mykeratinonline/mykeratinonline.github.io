@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Онлайн-навчання · MYKERATIN ACADEMY</title>
+<meta name="description" content="Онлайн-навчання MYKERATIN ACADEMY: холодне відновлення, ботокси-концентрати, нанопластика + кератин. Доступ до уроків назавжди." />
+<link rel="icon" href="img/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --cream:#f8f8f4; --paper:#faf9f5; --ink:#202a20; --forest:#142219; --forest-2:#293e2d;
+  --sage:#cdd5b9; --sage-2:#c3cfa4; --muted:#68765f; --line:#e2e0d5;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 15px/1.7 Montserrat,sans-serif;min-width:320px;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+h1,h2,h3{font-family:"Josefin Sans",sans-serif;font-weight:300;letter-spacing:.04em;margin:0}
+.wrap{width:min(calc(100% - 32px),1180px);margin-inline:auto}
+:focus-visible{outline:2px solid #869b77;outline-offset:3px}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(17,25,19,.94);backdrop-filter:blur(16px);border-bottom:1px solid #ffffff20}
+.top__in{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--paper);font-family:"Josefin Sans",sans-serif;letter-spacing:.18em;font-size:14px}
+.brand img{width:38px;height:38px}
+.brand span{color:var(--sage)}
+.top__ig{color:var(--sage);font-size:12px;letter-spacing:.14em;text-transform:uppercase;border:1px solid #cdd5b955;padding:8px 14px;border-radius:999px}
+.top__ig:hover{background:#cdd5b91a}
+
+/* hero */
+.hero{position:relative;background:var(--forest);color:var(--paper);overflow:hidden}
+.hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.28}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--forest) 25%,transparent)}
+.hero__in{position:relative;z-index:1;padding:clamp(56px,10vw,120px) 0 clamp(48px,8vw,96px)}
+.eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--sage)}
+.hero h1{font-size:clamp(36px,7vw,76px);line-height:1.02;margin:14px 0 20px;text-transform:uppercase}
+.hero p{max-width:520px;color:#e9e6db;margin:0 0 28px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0;list-style:none}
+.chips li{border:1px solid #cdd5b955;border-radius:999px;padding:6px 14px;font-size:13px;color:var(--sage)}
+
+/* steps */
+.how{padding:56px 0 8px}
+.how ol{list-style:none;margin:0;padding:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));counter-reset:s}
+.how li{counter-increment:s;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px 20px 18px}
+.how li::before{content:"0" counter(s);display:block;font-family:"Josefin Sans",sans-serif;font-size:28px;color:var(--muted);margin-bottom:6px}
+.how b{display:block;font-weight:600;margin-bottom:4px}
+.how span{color:#4b5546;font-size:14px}
+
+/* catalog */
+.cat{padding:56px 0 80px}
+.cat__head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:28px;flex-wrap:wrap}
+.cat h2{font-size:clamp(30px,5vw,48px);text-transform:uppercase;line-height:1}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(270px,1fr))}
+.card{display:flex;flex-direction:column;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:22px;overflow:hidden;padding:0;color:inherit;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -22px #14221966}
+.card__media{position:relative;aspect-ratio:3/2;background:linear-gradient(135deg,var(--forest-2),var(--forest));overflow:hidden}
+.card__media .pic{position:relative;width:100%;height:100%;object-fit:cover}
+.card__media .ph{position:absolute;inset:0;display:grid;place-items:center;color:var(--sage)}
+.card__media .ph img{width:76px;height:76px;opacity:.75}
+.badge{position:absolute;left:14px;top:14px;background:var(--paper);color:var(--forest);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:5px 11px;border-radius:999px;font-weight:600}
+.badge--soon{background:var(--sage)}
+.badge--sale{left:auto;right:14px;background:#b3473a;color:#fff}
+.sale{background:var(--sage);color:var(--forest);text-align:center;font-size:13px;letter-spacing:.06em;padding:9px 16px}
+.price s{color:var(--muted);font-weight:400;margin-right:6px}
+.card__body{display:flex;flex-direction:column;gap:8px;padding:20px 20px 22px;flex:1}
+.card__num{font-family:"Josefin Sans",sans-serif;color:var(--muted);font-size:13px;letter-spacing:.2em}
+.card h3{font-size:22px;line-height:1.2;font-weight:400}
+.card p{margin:0;color:#4b5546;font-size:14px}
+.card__foot{margin-top:auto;padding-top:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line)}
+.price{font-weight:600}
+.more{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest-2);display:flex;align-items:center;gap:8px}
+.arrow{width:34px;height:10px;fill:none;stroke:currentColor;stroke-width:1.3}
+
+/* sheet (course detail + payment) */
+.sheet{position:fixed;inset:0;z-index:50;display:flex;justify-content:center;align-items:flex-end}
+.sheet[hidden]{display:none}
+.sheet__bg{position:absolute;inset:0;background:#0b120dcc;animation:fade .2s}
+.sheet__panel{position:relative;width:min(760px,100%);max-height:92vh;overflow:auto;background:var(--cream);border-radius:26px 26px 0 0;animation:up .28s ease-out;overscroll-behavior:contain}
+@media(min-width:760px){.sheet{align-items:center}.sheet__panel{border-radius:26px;max-height:88vh}}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+@keyframes fade{from{opacity:0}}
+.sheet__close{position:sticky;top:12px;margin:12px 12px -56px auto;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:0;background:var(--paper);box-shadow:0 2px 10px #0002;z-index:2;color:var(--forest)}
+.sheet__close svg{width:18px;height:18px;stroke:currentColor;stroke-width:1.6;fill:none}
+.d-hero{background:var(--forest);color:var(--paper);padding:40px 24px 28px}
+.d-hero h2{font-size:clamp(26px,5vw,38px);line-height:1.12;margin:8px 0 10px}
+.d-hero .lead{color:#e9e6db;margin:0}
+.d-hero .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.d-hero .meta span{border:1px solid #cdd5b955;color:var(--sage);font-size:12px;padding:4px 12px;border-radius:999px}
+.d-body{padding:24px}
+.d-body h4{font-family:"Josefin Sans",sans-serif;font-weight:400;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:22px 0 10px}
+.d-body h4:first-child{margin-top:0}
+.d-body p{margin:0 0 10px}
+.ticks{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.ticks li{position:relative;padding-left:28px}
+.ticks li::before{content:"";position:absolute;left:0;top:.45em;width:16px;height:16px;border-radius:50%;background:var(--sage) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.3 2.2 4.7-4.8' fill='none' stroke='%23142219' stroke-width='1.6'/%3E%3C/svg%3E") center/contain no-repeat}
+.dots{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.dots li{position:relative;padding-left:22px}
+.dots li::before{content:"";position:absolute;left:4px;top:.7em;width:7px;height:7px;border-radius:50%;background:var(--muted)}
+.note{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--sage-2);border-radius:12px;padding:12px 14px;font-size:14px;margin-top:18px}
+.d-buy{position:sticky;bottom:0;background:var(--cream);border-top:1px solid var(--line);padding:20px 24px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.d-buy .price{font-size:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:0;border-radius:999px;background:var(--forest);color:var(--paper);padding:15px 26px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;transition:background .2s}
+.btn:hover{background:var(--forest-2)}
+.btn[disabled]{background:#b9bfb1;color:#f7f6f2;cursor:not-allowed}
+.btn--ghost{background:transparent;color:var(--forest);border:1px solid var(--forest)}
+.btn--ghost:hover{background:#1422190d}
+.btn--block{width:100%}
+
+/* payment */
+.pay h2{font-size:30px;line-height:1.1;margin:6px 0 4px}
+.pay .for{color:#4b5546;margin:0 0 18px;font-size:14px}
+.req{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:16px}
+.req div{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border-top:1px solid var(--line)}
+.req div:first-child{border-top:0}
+.req dt{font-size:11px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+.req dd{margin:2px 0 0;font-weight:500;word-break:break-all}
+.copy{flex:none;border:1px solid var(--line);background:var(--cream);border-radius:999px;padding:6px 12px;font-size:12px;color:var(--forest)}
+.copy.ok{background:var(--sage);border-color:var(--sage)}
+.steps2{counter-reset:p;list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.steps2 li{counter-increment:p;display:flex;gap:12px}
+.steps2 li::before{content:counter(p);flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--forest);color:var(--paper);font-size:13px}
+.msg{background:var(--paper);border:1px dashed var(--muted);border-radius:14px;padding:14px;font-size:14px;white-space:pre-line;margin:10px 0}
+.pay__actions{display:grid;gap:10px;margin-top:20px}
+.back{background:none;border:0;color:var(--muted);font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:0;margin-bottom:12px;display:inline-flex;gap:8px;align-items:center}
+.back .arrow{transform:scaleX(-1);width:24px}
+
+footer{background:var(--forest);color:#b9bfb1;padding:34px 0;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sage)}
+@media(max-width:520px){.brand{font-size:12px;letter-spacing:.12em;gap:10px}.brand span{display:none}.top__ig{padding:7px 12px;font-size:11px}.d-hero,.d-body{padding-inline:18px}.d-buy{padding-inline:18px}.d-buy .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body id="top">
+
+<div class="sale" id="sale" role="note"></div>
+<header class="top">
+  <div class="wrap top__in">
+    <a class="brand" href="#top"><img src="img/logo.webp" alt="" style="background:var(--forest-2);border-radius:50%" />MYKERATIN <span>ACADEMY</span></a>
+    <a class="top__ig" href="https://www.instagram.com/mykeratin_academy/" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</header>
+
+<section class="hero">
+  <img class="hero__bg" data-pic="hero" alt="" />
+  <div class="wrap hero__in">
+    <p class="eyebrow">Онлайн-навчання</p>
+    <h1>Навчайся<br />у своєму ритмі</h1>
+    <p>Курси від MYKERATIN ACADEMY, які можна проходити у зручний час та з будь-якої точки світу. Теорія, практика на моделях і доступ до уроків назавжди.</p>
+    <ul class="chips"><li>доступ назавжди</li><li>з будь-якого пристрою</li><li>теорія + практика</li></ul>
+  </div>
+</section>
+
+<section class="how wrap" aria-label="Як отримати доступ">
+  <ol>
+    <li><b>Обери навчання</b><span>Відкрий картку курсу й переглянь, що всередині.</span></li>
+    <li><b>Оплати за реквізитами</b><span>Натисни «Купити» — з'являться реквізити для переказу.</span></li>
+    <li><b>Надішли квитанцію в директ</b><span>Скриншот оплати + прізвище та ім'я, пошта, телефон.</span></li>
+    <li><b>Отримай доступ</b><span>Ми відкриємо доступ до уроків на твою пошту.</span></li>
+  </ol>
+</section>
+
+<main class="cat wrap" id="courses">
+  <div class="cat__head">
+    <h2>Усі навчання</h2>
+    <p class="eyebrow" style="color:var(--muted);margin:0">натисни на курс, щоб дізнатися більше</p>
+  </div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© MYKERATIN ACADEMY · 2026</span>
+    <a href="https://www.instagram.com/mykeratin_academy/" target="_blank" rel="noopener">@mykeratin_academy</a>
+  </div>
+</footer>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet__bg" data-close></div>
+  <div class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title" tabindex="-1">
+    <button class="sheet__close" type="button" data-close aria-label="Закрити"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    <div id="sheet-content"></div>
+  </div>
+</div>
+
+<script>
+/* ===== НАЛАШТУВАННЯ ===== */
+const INSTAGRAM = "mykeratin_academy";
+const REQUISITES = [
+  ["Отримувач", "ФОП Грудниста Анастасія Юріївна"],
+  ["Код отримувача", "3622306140"],
+  ["Рахунок IBAN", "UA553052990000026007050674783"],
+  ["Банк", "АТ КБ «ПриватБанк»"],
+  ["Призначення платежу", "За товар"],
+];
+/* Знижка на всі курси (з ціною). Діє з 00:00 "from" до 23:59 "to" за київським часом, потім зникає сама. */
+const DISCOUNT = { percent: 30, from: "2026-11-23", to: "2026-11-30" };
+/* КАРТИНКИ: лежать у папці img/ і називаються hero, kurs-1, kurs-2, kurs-3, kurs-4 (+ .jpg / .jpeg / .png / .webp).
+   Щоб замінити фото — завантаж у img/ файл з тим самим ім'ям. Якщо фото курсу немає — показується логотип. */
+const PIC_EXT = ["jpg", "jpeg", "png", "webp"];
+/* status: "open" — можна купити; "preorder" — купити зараз, доступ пізніше; "soon" — купити не можна
+   price: число в грн або null (тоді ціна не показується) */
+const COURSES = [
+  {
+    id: "cold", status: "open", price: 2000, img: "kurs-1",
+    title: "Холодне відновлення волосся",
+    short: "Процедура, яка сьогодні стрімко набирає популярність серед клієнтів ✨",
+    meta: ["уроки по 5–10 хв", "2 моделі", "диплом"],
+    intro: ["Холодне відновлення волосся — процедура, яка сьогодні стрімко набирає популярність серед клієнтів ✨", "Саме тому ми створили онлайн-навчання, яке можна проходити у зручний для вас час та з будь-якої точки світу."],
+    sections: [
+      { h: "На вас чекає", type: "ticks", items: ["зручна онлайн-платформа", "доступ до уроків назавжди", "короткі уроки по 5–10 хвилин", "детальний розбір кожного етапу процедури"] },
+      { h: "На навчанні розберемо", type: "dots", items: ["теорію + практику", "роботу на 2 моделях", "закриття холодним ботоксом", "роботу з візуалом та без нього", "амінокислоти, протеїни та ліпіди", "правильний підбір складників", "створення результату, після якого клієнт повернеться саме до вас"] },
+    ],
+    outro: ["Усі процеси детально показані та пояснені, щоб ви могли впевнено впровадити процедуру у свою роботу вже після навчання."],
+    note: "🎓 Для кожної учениці — диплом про проходження навчання.",
+  },
+  {
+    id: "botox", status: "open", price: 2000, img: "kurs-2",
+    title: "Ботокси-концентрати",
+    short: "Чистий, прогнозований результат без перевантаження волосся та власні формули під кожного клієнта.",
+    meta: ["4 уроки теорії", "2 уроки практики", "доступ назавжди"],
+    intro: ["Ти досі не працюєш з ботоксами-концентратами?", "Тоді ти втрачаєш можливість:"],
+    sections: [
+      { type: "dots", items: ["отримувати чистіший та прогнозований результат", "працювати без перевантаження волосся", "створювати власні формули під кожного клієнта", "ідеально закривати холодне відновлення ✨"] },
+      { h: "На цьому навчанні ми розберемо", type: "dots", items: ["як працюють ботокси-концентрати", "як правильно створювати болтушки", "пропорції та техніки змішування", "температурні режими", "роботу з різними типами волосся", "як отримати гладкість, блиск та щільність без перепитання волосся"] },
+      { h: "Формат", type: "ticks", items: ["4 уроки теорії", "2 уроки практики", "доступ до курсу назавжди", "перегляд у будь-який час і з будь-якого пристрою"] },
+    ],
+    outro: ["Ти можеш проходити навчання тоді, коли зручно саме тобі 💻✨", "Після навчання ти навчишся працювати з ботоксами-концентратами, правильно створювати болтушки, підбирати пропорції та отримувати чистий, стабільний результат без перевантаження волосся."],
+  },
+  {
+    id: "nano", status: "preorder", access: "30.11", price: 2000, img: "kurs-3",
+    title: "Подвійна техніка «Нанопластика + Кератин»",
+    author: "від Вікторії Іващенко",
+    short: "Напівперманент. Теорія + практика.",
+    meta: ["напівперманент", "теорія + практика", "старт 30.11"],
+    intro: ["Подвійна техніка «Нанопластика + Кератин» (напівперманент) від Вікторії Іващенко."],
+    sections: [{ h: "Формат", type: "ticks", items: ["теорія", "практика"] }],
+    note: "Купити можна вже зараз — доступ до уроків відкриється 30.11.",
+  },
+  {
+    id: "base", status: "soon", price: null, img: "kurs-4",
+    title: "Базовий курс",
+    author: "від Світлани Герасименко",
+    short: "Куратор, ботокс, нанопластика. Теорія + практика, стартові набори, сертифікат.",
+    meta: ["анонс у грудні"],
+    intro: ["Базовий курс від Світлани Герасименко."],
+    sections: [
+      { h: "Програма", type: "dots", items: ["куратор", "ботокс", "нанопластика"] },
+      { h: "Що входить", type: "ticks", items: ["теорія + практика", "стартові набори", "сертифікат"] },
+    ],
+    note: "Анонс — у грудні. Слідкуй за новинами в Instagram академії.",
+  },
+];
+/* ===== /НАЛАШТУВАННЯ ===== */
+
+const $ = (s, r = document) => r.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const money = (n) => n.toLocaleString("uk-UA").replace(/ /g, " ") + " грн";
+const arrow = '<svg class="arrow" viewBox="0 0 45 12" aria-hidden="true"><path d="M1 6H43M37 1L43 6L37 11"/></svg>';
+const badge = (c) => c.status === "preorder" ? `<span class="badge badge--soon">Доступ з ${c.access}</span>` : c.status === "soon" ? `<span class="badge badge--soon">Незабаром</span>` : `<span class="badge">Доступно</span>`;
+const media = (c) => `<div class="ph"><img src="img/logo.webp" alt="" /></div>` + (c.img ? `<img class="pic" data-pic="${c.img}" alt="" />` : "");
+const saleOn = (() => { const n = Date.now(); return n >= Date.parse(DISCOUNT.from + "T00:00:00+02:00") && n <= Date.parse(DISCOUNT.to + "T23:59:59+02:00"); })();
+const ddmm = (d) => d.slice(8, 10) + "." + d.slice(5, 7);
+const finalPrice = (c) => saleOn ? Math.round(c.price * (100 - DISCOUNT.percent) / 100) : c.price;
+const priceLabel = (c) => c.status === "soon" ? "Вартість згодом" : !c.price ? "" : saleOn ? `<s>${money(c.price)}</s> ${money(finalPrice(c))}` : money(c.price);
+if (saleOn) document.getElementById("sale").innerHTML = `<b>−${DISCOUNT.percent}% на всі курси</b> · до ${ddmm(DISCOUNT.to)} включно`;
+else document.getElementById("sale").remove();
+
+$("#grid").innerHTML = COURSES.map((c, i) => `
+  <button class="card" type="button" data-id="${c.id}">
+    <div class="card__media">${media(c)}${badge(c)}${saleOn && c.price && c.status !== "soon" ? `<span class="badge badge--sale">−${DISCOUNT.percent}%</span>` : ""}</div>
+    <div class="card__body">
+      <span class="card__num">${String(i + 1).padStart(2, "0")}</span>
+      <h3>${esc(c.title)}</h3>
+      ${c.author ? `<p><i>${esc(c.author)}</i></p>` : ""}
+      <p>${esc(c.short)}</p>
+      <div class="card__foot"><span class="price">${priceLabel(c)}</span><span class="more">Детальніше ${arrow}</span></div>
+    </div>
+  </button>`).join("");
+
+function loadPics(root = document) {
+  root.querySelectorAll("img[data-pic]").forEach((img) => {
+    let i = 0;
+    img.onerror = () => { if (++i < PIC_EXT.length) img.src = `img/${img.dataset.pic}.${PIC_EXT[i]}`; else img.remove(); };
+    img.src = `img/${img.dataset.pic}.${PIC_EXT[0]}`;
+  });
+}
+loadPics();
+
+const sheet = $("#sheet"), panel = $(".sheet__panel"), content = $("#sheet-content");
+let lastFocus = null;
+
+function list(s) {
+  const cls = s.type === "ticks" ? "ticks" : "dots";
+  return `${s.h ? `<h4>${esc(s.h)}</h4>` : ""}<ul class="${cls}">${s.items.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>`;
+}
+
+function renderCourse(c) {
+  const buy = c.status === "soon"
+    ? `<span class="price">Вартість згодом</span><button class="btn" disabled>Незабаром</button>`
+    : `<span class="price">${priceLabel(c)}</span><button class="btn" type="button" data-buy="${c.id}">${c.status === "preorder" ? "Купити зараз" : "Купити"} ${arrow}</button>`;
+  content.innerHTML = `
+    <div class="d-hero">
+      <p class="eyebrow">${c.status === "preorder" ? `Незабаром · доступ з ${c.access}` : c.status === "soon" ? "Незабаром" : "Онлайн-навчання"}</p>
+      <h2 id="sheet-title">${esc(c.title)}</h2>
+      ${c.author ? `<p class="lead">${esc(c.author)}</p>` : ""}
+      <div class="meta">${c.meta.map((m) => `<span>${esc(m)}</span>`).join("")}</div>
+    </div>
+    <div class="d-body">
+      ${(c.intro || []).map((p) => `<p>${esc(p)}</p>`).join("")}
+      ${c.sections.map(list).join("")}
+      ${(c.outro || []).length ? `<h4>Результат</h4>` + c.outro.map((p) => `<p>${esc(p)}</p>`).join("") : ""}
+      ${c.note ? `<div class="note">${esc(c.note)}</div>` : ""}
+    </div>
+    <div class="d-buy">${buy}</div>`;
+}
+
+function renderPay(c) {
+  const msg = `Оплата: ${c.title}${c.price ? ` — ${money(finalPrice(c))}` : ""}\nПрізвище та ім'я: \nПошта: \nНомер телефону: `;
+  content.innerHTML = `
+    <div class="d-body pay" style="padding-top:28px">
+      <button class="back" type="button" data-back="${c.id}">${arrow} До опису курсу</button>
+      <p class="eyebrow" style="color:var(--muted)">MYKERATIN ACADEMY</p>
+      <h2 id="sheet-title">Реквізити для оплати</h2>
+      <p class="for">${esc(c.title)}${c.price ? ` · до сплати <b>${money(finalPrice(c))}</b>${saleOn ? ` (знижка −${DISCOUNT.percent}%)` : ""}` : ""}</p>
+      <dl class="req">${REQUISITES.map(([k, v]) => `<div><span><dt>${k}</dt><dd>${esc(v)}</dd></span><button class="copy" type="button" data-copy="${esc(v)}">Копіювати</button></div>`).join("")}</dl>
+      <div class="note">Враховуй комісію банку під час переказу.${c.status === "preorder" ? ` Доступ до курсу відкриється ${c.access}.` : ""}</div>
+      <h4>Як отримати доступ</h4>
+      <ol class="steps2">
+        <li>Оплати за реквізитами вище.</li>
+        <li>Зроби скриншот квитанції.</li>
+        <li>Надішли квитанцію в директ <b>@${INSTAGRAM}</b> і напиши: прізвище та ім'я, пошту, номер телефону.</li>
+      </ol>
+      <h4>Шаблон повідомлення</h4>
+      <div class="msg" id="msg">${esc(msg)}</div>
+      <div class="pay__actions">
+        <a class="btn" href="https://ig.me/m/${INSTAGRAM}" target="_blank" rel="noopener">Надіслати квитанцію в директ ${arrow}</a>
+        <button class="btn btn--ghost" type="button" data-copy="${esc(msg)}">Скопіювати шаблон</button>
+      </div>
+    </div>`;
+}
+
+function open(id, view) {
+  const c = COURSES.find((x) => x.id === id);
+  if (!c) return;
+  if (sheet.hidden) lastFocus = document.activeElement;
+  view === "pay" ? renderPay(c) : renderCourse(c);
+  sheet.hidden = false;
+  document.body.style.overflow = "hidden";
+  panel.scrollTop = 0;
+  panel.focus();
+  history.replaceState(null, "", "#" + id + (view === "pay" ? "/pay" : ""));
+}
+function close() {
+  sheet.hidden = true;
+  document.body.style.overflow = "";
+  history.replaceState(null, "", location.pathname);
+  lastFocus && lastFocus.focus();
+}
+
+document.addEventListener("click", async (e) => {
+  const t = e.target.closest("[data-id],[data-buy],[data-back],[data-close],[data-copy]");
+  if (!t) return;
+  if (t.dataset.id) open(t.dataset.id);
+  else if (t.dataset.buy) open(t.dataset.buy, "pay");
+  else if (t.dataset.back) open(t.dataset.back);
+  else if (t.hasAttribute("data-close")) close();
+  else if (t.dataset.copy != null) {
+    try { await navigator.clipboard.writeText(t.dataset.copy); } catch (_) {
+      const a = document.createElement("textarea"); a.value = t.dataset.copy; document.body.append(a); a.select(); document.execCommand("copy"); a.remove();
+    }
+    const old = t.textContent; t.textContent = "Скопійовано ✓"; t.classList.add("ok");
+    setTimeout(() => { t.textContent = old; t.classList.remove("ok"); }, 1600);
+  }
+});
+document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !sheet.hidden) close(); });
+
+const [hid, hview] = location.hash.slice(1).split("/");
+if (hid) open(hid, hview);
+</script>
+</body>
+</html>
